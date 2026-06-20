@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"counter7seg_design": {
+			"proto_instances": {
+			}
+		}
+	}
+}
