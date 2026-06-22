@@ -56,8 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param general.usePosixSpawnForFork 1
-set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -75,7 +76,7 @@ set_property ip_output_repo f:/Embedded/Vivado/KMA/led7seg/led7seg.cache/ip [cur
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/hdl/counter7seg_design_wrapper.v
+read_verilog -library xil_defaultlib F:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/hdl/counter7seg_design_wrapper.v
 add_files F:/Embedded/Vivado/KMA/led7seg/led7seg.srcs/sources_1/bd/counter7seg_design/counter7seg_design.bd
 set_property used_in_implementation false [get_files -all f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/ip/counter7seg_design_vio_0_0/counter7seg_design_vio_0_0.xdc]
 set_property used_in_implementation false [get_files -all f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/ip/counter7seg_design_vio_0_0/counter7seg_design_vio_0_0_ooc.xdc]

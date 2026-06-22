@@ -56,7 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "counter7seg_design_led_counter_top_0_0_synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param general.usePosixSpawnForFork 1
+set_param xicom.use_bs_reader 1
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/mref
@@ -83,7 +85,7 @@ read_vhdl -library xil_defaultlib {
   F:/Embedded/Vivado/KMA/led7seg/led7seg.srcs/sources_1/new/led7seg.vhd
   F:/Embedded/Vivado/KMA/led7seg/led7seg.srcs/sources_1/new/conuter7seg.vhd
 }
-read_ip -quiet f:/Embedded/Vivado/KMA/led7seg/led7seg.srcs/sources_1/bd/counter7seg_design/ip/counter7seg_design_led_counter_top_0_0/counter7seg_design_led_counter_top_0_0.xci
+read_ip -quiet F:/Embedded/Vivado/KMA/led7seg/led7seg.srcs/sources_1/bd/counter7seg_design/ip/counter7seg_design_led_counter_top_0_0/counter7seg_design_led_counter_top_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

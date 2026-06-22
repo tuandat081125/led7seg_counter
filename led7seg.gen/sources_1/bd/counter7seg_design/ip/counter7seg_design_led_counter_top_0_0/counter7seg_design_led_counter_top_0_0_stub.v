@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-// Date        : Tue Jun 16 23:32:38 2026
+// Date        : Mon Jun 22 12:19:30 2026
 // Host        : LAPTOP-3O671DBN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/ip/counter7seg_design_led_counter_top_0_0/counter7seg_design_led_counter_top_0_0_stub.v

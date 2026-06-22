@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-// Date        : Tue Jun 16 23:32:38 2026
+// Date        : Mon Jun 22 12:19:30 2026
 // Host        : LAPTOP-3O671DBN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/ip/counter7seg_design_led_counter_top_0_0/counter7seg_design_led_counter_top_0_0_sim_netlist.v
@@ -527,6 +527,9 @@ module counter7seg_design_led_counter_top_0_0_counterN
   wire a_INST_0_i_10_n_0;
   wire a_INST_0_i_1_n_0;
   wire a_INST_0_i_5_n_0;
+  wire a_INST_0_i_6_n_0;
+  wire a_INST_0_i_7_n_0;
+  wire a_INST_0_i_8_n_0;
   wire a_INST_0_i_9_n_0;
   wire b;
   wire c;
@@ -541,7 +544,6 @@ module counter7seg_design_led_counter_top_0_0_counterN
   wire e_INST_0_i_1_n_0;
   wire f;
   wire g;
-  wire [3:1]\led7seg_display/led7seg_dig1 ;
   wire [3:1]\led7seg_display/seg_coder_s__3 ;
   wire [7:0]p_0_in;
   wire rst;
@@ -549,9 +551,9 @@ module counter7seg_design_led_counter_top_0_0_counterN
   LUT6 #(
     .INIT(64'h0000FFFF00FFB847)) 
     a_INST_0
-       (.I0(cnt_reg[0]),
+       (.I0(a_INST_0_i_1_n_0),
         .I1(a_0),
-        .I2(a_INST_0_i_1_n_0),
+        .I2(cnt_reg[0]),
         .I3(\led7seg_display/seg_coder_s__3 [2]),
         .I4(\led7seg_display/seg_coder_s__3 [3]),
         .I5(\led7seg_display/seg_coder_s__3 [1]),
@@ -562,47 +564,46 @@ module counter7seg_design_led_counter_top_0_0_counterN
        (.I0(a_INST_0_i_5_n_0),
         .I1(cnt_reg[1]),
         .I2(cnt_reg[2]),
-        .I3(\led7seg_display/led7seg_dig1 [1]),
-        .I4(\led7seg_display/led7seg_dig1 [2]),
+        .I3(a_INST_0_i_6_n_0),
+        .I4(a_INST_0_i_7_n_0),
         .I5(cnt_reg[3]),
         .O(a_INST_0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h96669996)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'hD242)) 
     a_INST_0_i_10
-       (.I0(cnt_reg[3]),
-        .I1(\led7seg_display/led7seg_dig1 [2]),
-        .I2(cnt_reg[1]),
-        .I3(cnt_reg[2]),
-        .I4(\led7seg_display/led7seg_dig1 [1]),
+       (.I0(cnt_reg[7]),
+        .I1(cnt_reg[5]),
+        .I2(cnt_reg[6]),
+        .I3(cnt_reg[4]),
         .O(a_INST_0_i_10_n_0));
   LUT6 #(
-    .INIT(64'h0CF3F30CAAAAAAAA)) 
+    .INIT(64'hFFFF000069666966)) 
     a_INST_0_i_2
-       (.I0(\led7seg_display/led7seg_dig1 [2]),
-        .I1(a_INST_0_i_1_n_0),
+       (.I0(cnt_reg[2]),
+        .I1(a_INST_0_i_6_n_0),
         .I2(cnt_reg[1]),
-        .I3(\led7seg_display/led7seg_dig1 [1]),
-        .I4(cnt_reg[2]),
+        .I3(a_INST_0_i_1_n_0),
+        .I4(a_INST_0_i_7_n_0),
         .I5(a_0),
         .O(\led7seg_display/seg_coder_s__3 [2]));
   LUT6 #(
-    .INIT(64'hCCFC3303AAAAAAAA)) 
+    .INIT(64'hFFFF0000AA65AA65)) 
     a_INST_0_i_3
-       (.I0(\led7seg_display/led7seg_dig1 [3]),
-        .I1(a_INST_0_i_1_n_0),
+       (.I0(a_INST_0_i_8_n_0),
+        .I1(cnt_reg[1]),
         .I2(a_INST_0_i_9_n_0),
-        .I3(cnt_reg[1]),
+        .I3(a_INST_0_i_1_n_0),
         .I4(a_INST_0_i_10_n_0),
         .I5(a_0),
         .O(\led7seg_display/seg_coder_s__3 [3]));
   LUT4 #(
-    .INIT(16'h3ACA)) 
+    .INIT(16'hF606)) 
     a_INST_0_i_4
-       (.I0(\led7seg_display/led7seg_dig1 [1]),
+       (.I0(cnt_reg[1]),
         .I1(a_INST_0_i_1_n_0),
         .I2(a_0),
-        .I3(cnt_reg[1]),
+        .I3(a_INST_0_i_6_n_0),
         .O(\led7seg_display/seg_coder_s__3 [1]));
   LUT6 #(
     .INIT(64'hE7188AE7AE7118AE)) 
@@ -623,7 +624,7 @@ module counter7seg_design_led_counter_top_0_0_counterN
         .I3(cnt_reg[4]),
         .I4(cnt_reg[3]),
         .I5(cnt_reg[2]),
-        .O(\led7seg_display/led7seg_dig1 [1]));
+        .O(a_INST_0_i_6_n_0));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h30EF8E30)) 
@@ -633,30 +634,31 @@ module counter7seg_design_led_counter_top_0_0_counterN
         .I2(cnt_reg[6]),
         .I3(cnt_reg[5]),
         .I4(cnt_reg[7]),
-        .O(\led7seg_display/led7seg_dig1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hD242)) 
+        .O(a_INST_0_i_7_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h96669996)) 
     a_INST_0_i_8
-       (.I0(cnt_reg[7]),
-        .I1(cnt_reg[5]),
-        .I2(cnt_reg[6]),
-        .I3(cnt_reg[4]),
-        .O(\led7seg_display/led7seg_dig1 [3]));
+       (.I0(cnt_reg[3]),
+        .I1(a_INST_0_i_7_n_0),
+        .I2(cnt_reg[1]),
+        .I3(cnt_reg[2]),
+        .I4(a_INST_0_i_6_n_0),
+        .O(a_INST_0_i_8_n_0));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h69)) 
     a_INST_0_i_9
        (.I0(cnt_reg[1]),
         .I1(cnt_reg[2]),
-        .I2(\led7seg_display/led7seg_dig1 [1]),
+        .I2(a_INST_0_i_6_n_0),
         .O(a_INST_0_i_9_n_0));
   LUT6 #(
     .INIT(64'h000000FFB847FFFF)) 
     b_INST_0
-       (.I0(cnt_reg[0]),
+       (.I0(a_INST_0_i_1_n_0),
         .I1(a_0),
-        .I2(a_INST_0_i_1_n_0),
+        .I2(cnt_reg[0]),
         .I3(\led7seg_display/seg_coder_s__3 [1]),
         .I4(\led7seg_display/seg_coder_s__3 [2]),
         .I5(\led7seg_display/seg_coder_s__3 [3]),
@@ -665,9 +667,9 @@ module counter7seg_design_led_counter_top_0_0_counterN
     .INIT(64'h0000FFFF5555FD5D)) 
     c_INST_0
        (.I0(\led7seg_display/seg_coder_s__3 [1]),
-        .I1(a_INST_0_i_1_n_0),
+        .I1(cnt_reg[0]),
         .I2(a_0),
-        .I3(cnt_reg[0]),
+        .I3(a_INST_0_i_1_n_0),
         .I4(\led7seg_display/seg_coder_s__3 [3]),
         .I5(\led7seg_display/seg_coder_s__3 [2]),
         .O(c));
@@ -830,9 +832,9 @@ module counter7seg_design_led_counter_top_0_0_counterN
     d_INST_0
        (.I0(\led7seg_display/seg_coder_s__3 [1]),
         .I1(\led7seg_display/seg_coder_s__3 [3]),
-        .I2(a_INST_0_i_1_n_0),
+        .I2(cnt_reg[0]),
         .I3(a_0),
-        .I4(cnt_reg[0]),
+        .I4(a_INST_0_i_1_n_0),
         .I5(\led7seg_display/seg_coder_s__3 [2]),
         .O(d));
   LUT6 #(
@@ -841,26 +843,26 @@ module counter7seg_design_led_counter_top_0_0_counterN
        (.I0(e_INST_0_i_1_n_0),
         .I1(\led7seg_display/seg_coder_s__3 [1]),
         .I2(\led7seg_display/seg_coder_s__3 [3]),
-        .I3(a_INST_0_i_1_n_0),
+        .I3(cnt_reg[0]),
         .I4(a_0),
-        .I5(cnt_reg[0]),
+        .I5(a_INST_0_i_1_n_0),
         .O(e));
   LUT6 #(
-    .INIT(64'h7DFFFF7D78FAFA78)) 
+    .INIT(64'hAFFADDDDFFFF8DD8)) 
     e_INST_0_i_1
        (.I0(a_0),
-        .I1(cnt_reg[2]),
-        .I2(\led7seg_display/led7seg_dig1 [1]),
+        .I1(a_INST_0_i_7_n_0),
+        .I2(a_INST_0_i_1_n_0),
         .I3(cnt_reg[1]),
-        .I4(a_INST_0_i_1_n_0),
-        .I5(\led7seg_display/led7seg_dig1 [2]),
+        .I4(a_INST_0_i_6_n_0),
+        .I5(cnt_reg[2]),
         .O(e_INST_0_i_1_n_0));
   LUT6 #(
     .INIT(64'h000000FF47FF0047)) 
     f_INST_0
-       (.I0(cnt_reg[0]),
+       (.I0(a_INST_0_i_1_n_0),
         .I1(a_0),
-        .I2(a_INST_0_i_1_n_0),
+        .I2(cnt_reg[0]),
         .I3(\led7seg_display/seg_coder_s__3 [1]),
         .I4(\led7seg_display/seg_coder_s__3 [2]),
         .I5(\led7seg_display/seg_coder_s__3 [3]),
@@ -869,9 +871,9 @@ module counter7seg_design_led_counter_top_0_0_counterN
     .INIT(64'hABFBFFFFFFFFAAAA)) 
     g_INST_0
        (.I0(\led7seg_display/seg_coder_s__3 [3]),
-        .I1(a_INST_0_i_1_n_0),
+        .I1(cnt_reg[0]),
         .I2(a_0),
-        .I3(cnt_reg[0]),
+        .I3(a_INST_0_i_1_n_0),
         .I4(\led7seg_display/seg_coder_s__3 [2]),
         .I5(\led7seg_display/seg_coder_s__3 [1]),
         .O(g));

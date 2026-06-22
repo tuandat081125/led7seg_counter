@@ -115,9 +115,9 @@ cat <= mux_state_s;
 process(mux_state_s)
 begin
   if mux_state_s = '0' then
-    seg_coder_s <= led7seg_dig1;
-  elsif mux_state_s = '1' then
     seg_coder_s <= led7seg_dig2;
+  elsif mux_state_s = '1' then
+    seg_coder_s <= led7seg_dig1;
   end if;
 end process;
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Wed Jun 17 00:15:55 2026
+| Date             : Mon Jun 22 12:21:28 2026
 | Host             : LAPTOP-3O671DBN running 64-bit major release  (build 9200)
 | Command          : report_power -file counter7seg_design_wrapper_power_routed.rpt -pb counter7seg_design_wrapper_power_summary_routed.pb -rpx counter7seg_design_wrapper_power_routed.rpx
 | Design           : counter7seg_design_wrapper
@@ -54,7 +54,7 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |    <0.001 |        3 |       --- |             --- |
 | Slice Logic              |    <0.001 |     4767 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1395 |     20800 |            6.71 |
+|   LUT as Logic           |    <0.001 |     1394 |     20800 |            6.70 |
 |   Register               |    <0.001 |     2510 |     41600 |            6.03 |
 |   CARRY4                 |    <0.001 |       54 |      8150 |            0.66 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
@@ -62,7 +62,7 @@ Table of Contents
 |   LUT as Shift Register  |    <0.001 |      109 |      9600 |            1.14 |
 |   F7/F8 Muxes            |    <0.001 |        4 |     32600 |            0.01 |
 |   Others                 |     0.000 |      299 |       --- |             --- |
-| Signals                  |    <0.001 |     3433 |       --- |             --- |
+| Signals                  |    <0.001 |     3437 |       --- |             --- |
 | Block RAM                |    <0.001 |      0.5 |        50 |            1.00 |
 | I/O                      |    <0.001 |       10 |       210 |            4.76 |
 | Static Power             |     0.062 |          |           |                 |

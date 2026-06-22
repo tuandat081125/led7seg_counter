@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
--- Date        : Tue Jun 16 23:32:38 2026
+-- Date        : Mon Jun 22 12:19:30 2026
 -- Host        : LAPTOP-3O671DBN running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               f:/Embedded/Vivado/KMA/led7seg/led7seg.gen/sources_1/bd/counter7seg_design/ip/counter7seg_design_led_counter_top_0_0/counter7seg_design_led_counter_top_0_0_sim_netlist.vhdl
@@ -632,6 +632,9 @@ architecture STRUCTURE of counter7seg_design_led_counter_top_0_0_counterN is
   signal a_INST_0_i_10_n_0 : STD_LOGIC;
   signal a_INST_0_i_1_n_0 : STD_LOGIC;
   signal a_INST_0_i_5_n_0 : STD_LOGIC;
+  signal a_INST_0_i_6_n_0 : STD_LOGIC;
+  signal a_INST_0_i_7_n_0 : STD_LOGIC;
+  signal a_INST_0_i_8_n_0 : STD_LOGIC;
   signal a_INST_0_i_9_n_0 : STD_LOGIC;
   signal \cnt[5]_i_2_n_0\ : STD_LOGIC;
   signal \cnt[7]_i_2_n_0\ : STD_LOGIC;
@@ -639,13 +642,12 @@ architecture STRUCTURE of counter7seg_design_led_counter_top_0_0_counterN is
   signal \cnt[7]_i_4_n_0\ : STD_LOGIC;
   signal cnt_reg : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal e_INST_0_i_1_n_0 : STD_LOGIC;
-  signal \led7seg_display/led7seg_dig1\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \led7seg_display/seg_coder_s__3\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal p_0_in : STD_LOGIC_VECTOR ( 7 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of a_INST_0_i_10 : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of a_INST_0_i_10 : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of a_INST_0_i_7 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of a_INST_0_i_8 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of a_INST_0_i_8 : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of a_INST_0_i_9 : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \cnt[0]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \cnt[2]_i_1\ : label is "soft_lutpair0";
@@ -661,9 +663,9 @@ a_INST_0: unisim.vcomponents.LUT6
       INIT => X"0000FFFF00FFB847"
     )
         port map (
-      I0 => cnt_reg(0),
+      I0 => a_INST_0_i_1_n_0,
       I1 => a_0,
-      I2 => a_INST_0_i_1_n_0,
+      I2 => cnt_reg(0),
       I3 => \led7seg_display/seg_coder_s__3\(2),
       I4 => \led7seg_display/seg_coder_s__3\(3),
       I5 => \led7seg_display/seg_coder_s__3\(1),
@@ -677,58 +679,57 @@ a_INST_0_i_1: unisim.vcomponents.LUT6
       I0 => a_INST_0_i_5_n_0,
       I1 => cnt_reg(1),
       I2 => cnt_reg(2),
-      I3 => \led7seg_display/led7seg_dig1\(1),
-      I4 => \led7seg_display/led7seg_dig1\(2),
+      I3 => a_INST_0_i_6_n_0,
+      I4 => a_INST_0_i_7_n_0,
       I5 => cnt_reg(3),
       O => a_INST_0_i_1_n_0
     );
-a_INST_0_i_10: unisim.vcomponents.LUT5
+a_INST_0_i_10: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"96669996"
+      INIT => X"D242"
     )
         port map (
-      I0 => cnt_reg(3),
-      I1 => \led7seg_display/led7seg_dig1\(2),
-      I2 => cnt_reg(1),
-      I3 => cnt_reg(2),
-      I4 => \led7seg_display/led7seg_dig1\(1),
+      I0 => cnt_reg(7),
+      I1 => cnt_reg(5),
+      I2 => cnt_reg(6),
+      I3 => cnt_reg(4),
       O => a_INST_0_i_10_n_0
     );
 a_INST_0_i_2: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0CF3F30CAAAAAAAA"
+      INIT => X"FFFF000069666966"
     )
         port map (
-      I0 => \led7seg_display/led7seg_dig1\(2),
-      I1 => a_INST_0_i_1_n_0,
+      I0 => cnt_reg(2),
+      I1 => a_INST_0_i_6_n_0,
       I2 => cnt_reg(1),
-      I3 => \led7seg_display/led7seg_dig1\(1),
-      I4 => cnt_reg(2),
+      I3 => a_INST_0_i_1_n_0,
+      I4 => a_INST_0_i_7_n_0,
       I5 => a_0,
       O => \led7seg_display/seg_coder_s__3\(2)
     );
 a_INST_0_i_3: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"CCFC3303AAAAAAAA"
+      INIT => X"FFFF0000AA65AA65"
     )
         port map (
-      I0 => \led7seg_display/led7seg_dig1\(3),
-      I1 => a_INST_0_i_1_n_0,
+      I0 => a_INST_0_i_8_n_0,
+      I1 => cnt_reg(1),
       I2 => a_INST_0_i_9_n_0,
-      I3 => cnt_reg(1),
+      I3 => a_INST_0_i_1_n_0,
       I4 => a_INST_0_i_10_n_0,
       I5 => a_0,
       O => \led7seg_display/seg_coder_s__3\(3)
     );
 a_INST_0_i_4: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"3ACA"
+      INIT => X"F606"
     )
         port map (
-      I0 => \led7seg_display/led7seg_dig1\(1),
+      I0 => cnt_reg(1),
       I1 => a_INST_0_i_1_n_0,
       I2 => a_0,
-      I3 => cnt_reg(1),
+      I3 => a_INST_0_i_6_n_0,
       O => \led7seg_display/seg_coder_s__3\(1)
     );
 a_INST_0_i_5: unisim.vcomponents.LUT6
@@ -755,7 +756,7 @@ a_INST_0_i_6: unisim.vcomponents.LUT6
       I3 => cnt_reg(4),
       I4 => cnt_reg(3),
       I5 => cnt_reg(2),
-      O => \led7seg_display/led7seg_dig1\(1)
+      O => a_INST_0_i_6_n_0
     );
 a_INST_0_i_7: unisim.vcomponents.LUT5
     generic map(
@@ -767,18 +768,19 @@ a_INST_0_i_7: unisim.vcomponents.LUT5
       I2 => cnt_reg(6),
       I3 => cnt_reg(5),
       I4 => cnt_reg(7),
-      O => \led7seg_display/led7seg_dig1\(2)
+      O => a_INST_0_i_7_n_0
     );
-a_INST_0_i_8: unisim.vcomponents.LUT4
+a_INST_0_i_8: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"D242"
+      INIT => X"96669996"
     )
         port map (
-      I0 => cnt_reg(7),
-      I1 => cnt_reg(5),
-      I2 => cnt_reg(6),
-      I3 => cnt_reg(4),
-      O => \led7seg_display/led7seg_dig1\(3)
+      I0 => cnt_reg(3),
+      I1 => a_INST_0_i_7_n_0,
+      I2 => cnt_reg(1),
+      I3 => cnt_reg(2),
+      I4 => a_INST_0_i_6_n_0,
+      O => a_INST_0_i_8_n_0
     );
 a_INST_0_i_9: unisim.vcomponents.LUT3
     generic map(
@@ -787,7 +789,7 @@ a_INST_0_i_9: unisim.vcomponents.LUT3
         port map (
       I0 => cnt_reg(1),
       I1 => cnt_reg(2),
-      I2 => \led7seg_display/led7seg_dig1\(1),
+      I2 => a_INST_0_i_6_n_0,
       O => a_INST_0_i_9_n_0
     );
 b_INST_0: unisim.vcomponents.LUT6
@@ -795,9 +797,9 @@ b_INST_0: unisim.vcomponents.LUT6
       INIT => X"000000FFB847FFFF"
     )
         port map (
-      I0 => cnt_reg(0),
+      I0 => a_INST_0_i_1_n_0,
       I1 => a_0,
-      I2 => a_INST_0_i_1_n_0,
+      I2 => cnt_reg(0),
       I3 => \led7seg_display/seg_coder_s__3\(1),
       I4 => \led7seg_display/seg_coder_s__3\(2),
       I5 => \led7seg_display/seg_coder_s__3\(3),
@@ -809,9 +811,9 @@ c_INST_0: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \led7seg_display/seg_coder_s__3\(1),
-      I1 => a_INST_0_i_1_n_0,
+      I1 => cnt_reg(0),
       I2 => a_0,
-      I3 => cnt_reg(0),
+      I3 => a_INST_0_i_1_n_0,
       I4 => \led7seg_display/seg_coder_s__3\(3),
       I5 => \led7seg_display/seg_coder_s__3\(2),
       O => c
@@ -1021,9 +1023,9 @@ d_INST_0: unisim.vcomponents.LUT6
         port map (
       I0 => \led7seg_display/seg_coder_s__3\(1),
       I1 => \led7seg_display/seg_coder_s__3\(3),
-      I2 => a_INST_0_i_1_n_0,
+      I2 => cnt_reg(0),
       I3 => a_0,
-      I4 => cnt_reg(0),
+      I4 => a_INST_0_i_1_n_0,
       I5 => \led7seg_display/seg_coder_s__3\(2),
       O => d
     );
@@ -1035,22 +1037,22 @@ e_INST_0: unisim.vcomponents.LUT6
       I0 => e_INST_0_i_1_n_0,
       I1 => \led7seg_display/seg_coder_s__3\(1),
       I2 => \led7seg_display/seg_coder_s__3\(3),
-      I3 => a_INST_0_i_1_n_0,
+      I3 => cnt_reg(0),
       I4 => a_0,
-      I5 => cnt_reg(0),
+      I5 => a_INST_0_i_1_n_0,
       O => \^e\
     );
 e_INST_0_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7DFFFF7D78FAFA78"
+      INIT => X"AFFADDDDFFFF8DD8"
     )
         port map (
       I0 => a_0,
-      I1 => cnt_reg(2),
-      I2 => \led7seg_display/led7seg_dig1\(1),
+      I1 => a_INST_0_i_7_n_0,
+      I2 => a_INST_0_i_1_n_0,
       I3 => cnt_reg(1),
-      I4 => a_INST_0_i_1_n_0,
-      I5 => \led7seg_display/led7seg_dig1\(2),
+      I4 => a_INST_0_i_6_n_0,
+      I5 => cnt_reg(2),
       O => e_INST_0_i_1_n_0
     );
 f_INST_0: unisim.vcomponents.LUT6
@@ -1058,9 +1060,9 @@ f_INST_0: unisim.vcomponents.LUT6
       INIT => X"000000FF47FF0047"
     )
         port map (
-      I0 => cnt_reg(0),
+      I0 => a_INST_0_i_1_n_0,
       I1 => a_0,
-      I2 => a_INST_0_i_1_n_0,
+      I2 => cnt_reg(0),
       I3 => \led7seg_display/seg_coder_s__3\(1),
       I4 => \led7seg_display/seg_coder_s__3\(2),
       I5 => \led7seg_display/seg_coder_s__3\(3),
@@ -1072,9 +1074,9 @@ g_INST_0: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \led7seg_display/seg_coder_s__3\(3),
-      I1 => a_INST_0_i_1_n_0,
+      I1 => cnt_reg(0),
       I2 => a_0,
-      I3 => cnt_reg(0),
+      I3 => a_INST_0_i_1_n_0,
       I4 => \led7seg_display/seg_coder_s__3\(2),
       I5 => \led7seg_display/seg_coder_s__3\(1),
       O => g
